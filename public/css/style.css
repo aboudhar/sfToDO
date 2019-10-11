@@ -104,7 +104,7 @@ input {
 
 /* Style the "Add" button */
 .addBtn {
-  padding: 10px;
+  padding: 8px;
   width: 25%;
   background: #d9d9d9;
   color: #555;
@@ -118,4 +118,8 @@ input {
 
 .addBtn:hover {
   background-color: #bbb;
+}
+
+li a {
+  display: block;
 }

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+    <form method="POST" action="{{path('add_task')}}" id="myDIV" class="header">
+        <h2 style="margin:5px">My To Do List</h2>
+        <input name="title" type="text" id="myInput" placeholder="Title..." required>
+        <button type="submit" onclick="newElement()" class="addBtn">Add</button>
+    </form>
+    <ul id="myUL">
+
+        {% for task in tasks %}
+            <li {% if task.satus %} class="checked" {% endif %} >
+                {# <a class="checked-{{task.satus ? '1':'0'}}" href="{{path('switch_status',{'id':task.id})}}"></a>  #}
+                <a href="{{path('switch_status',{'id':task.id})}}">{{task.title}}</a>
+                <a href="{{path('delete_task',{'id':task.id})}}"><span class="close">×</span></a>
+            </li>
+        {% endfor %} 
+        
+    </ul>
+ {% endblock %}

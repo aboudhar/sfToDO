@@ -1,6 +1,6 @@
 
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
+/* var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -8,7 +8,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
-}
+} */
 
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
@@ -24,6 +24,7 @@ for (i = 0; i < close.length; i++) {
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
+    //ev.target.classList.remove('checked-0');
     ev.target.classList.toggle('checked');
   }
 }, false);
@@ -39,13 +40,13 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("myInput").value = "";
+  //document.getElementById("myInput").value = "";
 
-  var span = document.createElement("SPAN");
+  /* var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  li.appendChild(span);
+  li.appendChild(span); */
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
